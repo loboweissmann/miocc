@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	
+	<bean name="itexto.miocc.tests.instantiation.BeanTest" id="beanTest">
+	
+		<property name="intValue" value="1979"/>
+		<property name="stringValue" value="Just a string"/>
+		<property name="doubleValue" value="24"/>
+		<property name="charValue" value="k"/>
+		<property name="booleanValue" value="true"/>
+	</bean>
+	
+	<bean name="itexto.miocc.tests.instantiation.BeanTest" id="other">
+		<property name="stringValue" value="other"/>
+		<property name="otherBean" ref="beanTest"/>
+	</bean>
+	
+	<bean name="itexto.miocc.tests.instantiation.BeanTest" id="constructor">
+		<constructor-arg order="0" value="Just a string"/>
+		<constructor-arg order="1" value="1"/>
+	</bean>
+	
+</beans>

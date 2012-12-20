@@ -1,0 +1,37 @@
+<!--
+	DTD for the itexto Container
+	Author: Henrique Lobo Weissmann
+	Date: 25/12/2007 - Merry Christmas!
+-->
+
+<!ELEMENT beans (bean*)>
+<!-- O bean que vai ser gerenciado pelo itexto Container -->
+<!ELEMENT bean (property*, constructor-arg*)>
+<!-- O nome do bean. Identifica o caminho completo até a classe que será carregada -->
+<!ATTLIST bean name #REQUIRED>
+<!-- O id pelo qual o bean vai ser reconhecido -->
+<!ATTLIST bean id #REQUIRED>
+<!-- 
+	O tipo de escopo do bean.
+	Um bean pode ter dois tipos de escopo: instance (é criada uma nova instância do bean) ou
+	singleton (é mantida uma única cópia do bean em memória)
+-->
+<!ATTLIST bean escope (instance | singleton) "instance">
+<!--
+	Property representa uma propriedade de um bean.
+	É utilizado aqui o padrão Java Beans para identificar as propriedades
+-->
+<!ELEMENT property (ANY)>
+<!--
+	O nome da propriedade (seguindo o pardão Java Beans
+-->
+<!ATTLIST property name #PCDATA>
+<!--
+	O valor da propriedade
+-->
+<!ATTLIST property value #PCDATA>
+<!-- O tipo do atributo (indica o caminho completo da classe -->
+<!ATTLIST property type #PCDATA>
+
+
+<!ELEMENT constructor-arg (ANY)>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<beans>
+
+	<bean id="beanTest" name="a.class.that.doesng.exist" scope="singleton">
+		<property name="property1" value="Value1"/>
+		<property name="reference" ref="referencedBean"/>
+	</bean>
+
+	<bean id="referencedBean" name="a.class.that.does.not.exist" scope="singleton">
+		<constructor-arg order="0" value="Something"/>
+	</bean>
+
+</beans>

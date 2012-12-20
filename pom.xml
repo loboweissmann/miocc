@@ -1,0 +1,15 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<name>miocc</name>
+	<groupId>br.com.itexto</groupId>
+	<artifactId>miocc</artifactId>
+	<version>0.0.2</version>
+	
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.2</version>
+		</dependency>
+	</dependencies>
+</project>
