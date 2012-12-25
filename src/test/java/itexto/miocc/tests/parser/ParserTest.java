@@ -13,11 +13,11 @@ public class ParserTest extends TestCase {
 	
 	public void testGetBeans() throws Exception {
 		Parser parser = new Parser();
-		InputStream input = getClass().getClassLoader().getResourceAsStream("itexto/container/tests/entities/NewFile.xml");
+		InputStream input = getClass().getClassLoader().getResourceAsStream("itexto/miocc/tests/instantiation/NewFile.xml");
 		assertNotNull(input);
 		Map<String, Bean> beans = parser.getBeans(input);
 		
-		assertNotNull(beans);
+		assertNotNull("Sem beans", beans);
 		assertTrue(beans.size() > 0);
 		assertTrue(beans.containsKey("beanTest"));
 		Bean parsed = beans.get("beanTest");
@@ -29,7 +29,7 @@ public class ParserTest extends TestCase {
 	
 	public void testGetDependencies() throws Exception {
 		Parser parser = new Parser();
-		InputStream input = getClass().getClassLoader().getResourceAsStream("itexto/container/tests/entities/NewFile.xml");
+		InputStream input = getClass().getClassLoader().getResourceAsStream("itexto/miocc/tests/instantiation/NewFile.xml");
 		assertNotNull(input);
 		Map<String, Bean> beans = parser.getBeans(input);
 		Bean withDependencies = beans.get("beanTest");
