@@ -5,7 +5,7 @@ package itexto.miocc;
  * @author Henrique
  *
  */
-public class ContainerException extends Exception {
+public class ContainerException extends RuntimeException {
 	
 	/** The message */
 	protected String message;
