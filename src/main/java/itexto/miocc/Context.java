@@ -12,7 +12,7 @@ import itexto.miocc.parser.*;
  * beans carregados pelo container 
  * @author Henrique
  */
-public class Context implements Miocc {
+public class Context {
 	
 	/** The singletons of the context */
 	private HashMap<String, Object> singletons;
@@ -35,7 +35,6 @@ public class Context implements Miocc {
 	/**
 	 * Returns a read only list of all the 
 	 */
-    @Override
 	public Map<String, Bean> getDefinitions()
 	{
 		return Collections.unmodifiableMap(getBeans());
@@ -55,7 +54,6 @@ public class Context implements Miocc {
 	 * @param beanName
 	 * @return
 	 */
-    @Override
 	public Object getBean(String id) throws InstantiationExceptionItContainer
 	{
 		Bean definition = 
@@ -83,10 +81,10 @@ public class Context implements Miocc {
 		return null;
 	}
 	
-	/** Construtor que busca todos os dados a partir do stream de entrada */
-	public Context(InputStream input) throws ContainerException
+	/** Construtor que busca todos os dados a partir do parser */
+	public Context(Parser parser) throws ContainerException
 	{
-		this.beans = new Parser().getBeans(input);
+		this.beans = parser.getBeans();
 	}
 	
 	/** Cosntrutor padrão */
